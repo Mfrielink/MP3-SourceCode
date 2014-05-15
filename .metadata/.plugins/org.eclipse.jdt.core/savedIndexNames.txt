@@ -11,6 +11,5 @@ INDEX VERSION 1.126+C:\Users\Gertjan\Documents\GitHub\MP3-SourceCode\.metadata\.
 4041092966.index
 4155206848.index
 1697886153.index
-1959991887.index
 305854171.index
 3974580528.index
