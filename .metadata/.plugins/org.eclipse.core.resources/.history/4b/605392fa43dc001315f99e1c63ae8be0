@@ -5,10 +5,8 @@ public class Hui {
 
 	int buttonCombi1;
 	int buttonCombi2;
-	boolean nextSong = false;
-	boolean previousSong = false;
-	boolean fastForwardSong = false;
-	boolean fastRewindSong = false;
+	boolean nextButton = false;
+	boolean backButton = false;
 	boolean playPauseButton = false;
 
 	public void checkInput() {
@@ -24,19 +22,27 @@ public class Hui {
 		buttonCombi2 = io.ioread(84);
 
 		if (buttonCombi1 == 1 && buttonCombi2 == 1) {
-
+			playPauseButton = true;
+			nextButton = false;
+			backButton = false;
 		}
 
 		if (buttonCombi1 == 1 && buttonCombi2 == 0) {
-
+			playPauseButton = false;
+			nextButton = true;
+			backButton = false;
 		}
 
 		if (buttonCombi1 == 0 && buttonCombi2 == 1) {
-
+			playPauseButton = false;
+			nextButton = false;
+			backButton = true;
 		}
 
 		if (buttonCombi1 == 0 && buttonCombi2 == 0) {
-
+			playPauseButton = false;
+			nextButton = false;
+			backButton = false;
 		}
 
 	}
