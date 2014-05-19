@@ -1,3 +1,5 @@
+package src;
+
 public class Lcd {
 	static Gpio io = new Gpio();
 	// io.iowrite(Pinnummer, waarde);

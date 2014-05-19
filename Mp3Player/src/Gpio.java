@@ -1,3 +1,5 @@
+package src;
+
 class Gpio {
 	/* Native methods declaration */
 	public native int ioinit();
