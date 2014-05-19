@@ -1,4 +1,4 @@
-package src;
+
 
 class Gpio {
 	/* Native methods declaration */
