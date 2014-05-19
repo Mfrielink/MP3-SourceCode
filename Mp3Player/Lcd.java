@@ -1,5 +1,3 @@
-
-
 public class Lcd {
 	static Gpio io = new Gpio();
 	// io.iowrite(Pinnummer, waarde);
@@ -16,7 +14,7 @@ public class Lcd {
 //			io.iowrite(,(short)0xE); //Display ON, Cursor ON, Blinking OFF
 		}
 		if(displayOn = false) {
-			io.iowrite(6,(short)0x8); //Display OFF, Cursor OFF, Blinking ON
+			io.iowrite(6,(short)0x8); //Display OFF, Cursor OFF, Blinking OFF
 		}
 	}
 	
@@ -60,11 +58,34 @@ public class Lcd {
 		}
 	}
 	
-//writeText("Hoi");
-	public static void writeText( String str ) { 
+	public static void sendInfo( String str ) { //writeText();
 		for( int idx = 0; idx < str.length(); idx++ ) {
-			io.iowrite(6, str.charAt(idx)); 
+			int temp = convert(str.charAt(idx));
+			io.iowrite(6, temp); 
 		}
+	}
+	
+	public static int convert(char chr) { //stringToHex();
+		String hex = Integer.toHexString((int) chr);
+		int temp = Integer.valueOf(hex);
+
+		return temp;
+	}
+
+	public static String asciiToHex(String ascii){
+		String test = "a";
+		
+        StringBuilder hex = new StringBuilder();
+        
+        for (int i=0; i < test.length(); i++) {
+            hex.append(Integer.toHexString(test.charAt(i)));
+        }       
+        System.out.println();
+        return hex.toString();
+    } 
+	
+	public static void convert(String str) {
+		
 	}
 
 	public static void writeSign( int tekenCode ) { 
@@ -93,9 +114,7 @@ public class Lcd {
 	
 // ***TEST VERSIE***
 	public void maakEigenIcon() { 
-	 // Dit zijn de voorbeeld codes 
 	 short[] codes = { 0, 10, 10, 0, 17, 14, 6, 0 }; 
-	 // Schrijf de codes 
 	 
 	 Lcd.writeCustomCharCodes( 0, codes ); 
 	 } 
