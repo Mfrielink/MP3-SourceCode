@@ -13,7 +13,7 @@ public class InfoSd {
 
 	public String getSongName(int x) {
 /*
- * test
+
 		Mp3File mp3file = null;
 
 		try {
